@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>{{ heading1 }}</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script></head>
+<body>
+  <h1>{{ heading1 }}</h1>
+  <p>{{ para1 }}</p>
+  <h2>{{ heading2 }}</h2>
+  <p>{{ para2 }}</p>
+  <img src="{{ image }}" alt="">
+  <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/admin/">Edit</a></p>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", u => { if (!u)
+        window.netlifyIdentity.on("login", () => location.href = "/admin/"); });
+    }
+  </script>
+</body>
+</html>
